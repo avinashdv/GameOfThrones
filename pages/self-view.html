@@ -1,0 +1,280 @@
+
+<!-- Used to display the info -->
+
+<div class="w3-content w3-panel" style="max-width: 1100px">
+
+<!-- Start of Individual Book -->
+<div ng-if="selfCtrl.Book">
+	<div ng-init="selfCtrl.loadBookData()">
+
+		<!-- Name of the Book -->
+		<h1 class="font">{{selfCtrl.bookData.name}}</h1>
+		
+		<!-- Isbn of the Book -->
+		<p class="other">
+			<b>Isbn:</b> {{selfCtrl.bookData.isbn}}
+		</p>
+
+		<!-- No of Pages of Book -->
+		<p class="other">
+			<b>Pages:</b> {{selfCtrl.bookData.numberOfPages}}
+		</p>
+
+		<!-- Publisher of Book -->
+		<p class="other">
+			<b>Publisher:</b> {{selfCtrl.bookData.publisher}}
+		</p>
+
+		<!-- Country in which Book was Released -->
+		<p class="other">
+			<b>Country:</b> {{selfCtrl.bookData.country}}
+		</p>
+
+		<!-- Media Type in which Book was Released -->
+		<p class="other">
+			<b>Media Type:</b> {{selfCtrl.bookData.mediaType}}
+		</p>
+
+		<!-- Authors of Book -->
+		<b class="other">Authors:</b>
+		<p class="other" ng-repeat="author in selfCtrl.bookData.authors">
+				 {{ author }}
+		</p>
+
+		<!-- Characters in the Book -->
+		<div ng-if="selfCtrl.char" class="other">
+			<b>Characters:</b>
+			<p ng-repeat="character in selfCtrl.bookData.characters">
+				<a target="_blank" href="{{character}}">{{ character }}</a>
+			</p>
+		</div>
+
+		<!-- povCharacters in the Book -->
+		<div ng-if="selfCtrl.pov" class="other">
+			<b>Pov Characters:</b>
+			<p ng-repeat="povCharacter in selfCtrl.bookData.povCharacters">
+				<a target="_blank" href="{{povCharacter}}">{{povCharacter}}</a>
+			</p>
+		</div>
+
+	</div>
+</div>
+<!-- End of Individual Book -->
+
+
+
+
+<!-- Start of Individual Character -->
+<div ng-if="selfCtrl.Character">
+	<div ng-init="selfCtrl.loadCharacterData()">
+		
+		<!-- Name of the Character -->
+		<h1 class="font">{{selfCtrl.characterData.name}}</h1>
+
+		<!-- Gender of the Character -->
+		<p class="other"><b>Gender:</b> {{selfCtrl.characterData.gender}}</p>
+		
+		<!-- Culture of the Character -->
+		<p class="other" ng-if="selfCtrl.culture">
+			<b>Culture:</b> 
+			{{selfCtrl.characterData.culture}}
+		</p>
+
+		<!-- DOB of Character -->
+		<p class="other" ng-if="selfCtrl.born">
+			<b>Born:</b> 
+			{{selfCtrl.characterData.born}}
+		</p>
+
+		<p class="other" ng-if="selfCtrl.died">
+			<b>Died:</b> 
+			{{selfCtrl.characterData.died}}
+		</p>
+
+		<p class="other" ng-if="selfCtrl.father">
+			<b>Father:</b> 
+			<a target="_blank" href="{{selfCtrl.characterData.father}}">{{selfCtrl.characterData.father}}</a>
+		</p>
+
+		<p class="other" ng-if="selfCtrl.mother">
+			<b>Mother:</b> 
+			<a target="_blank" href="{{selfCtrl.characterData.mother}}">{{selfCtrl.characterData.mother}}</a>
+		</p>
+
+		<p class="other" ng-if="selfCtrl.spouse">
+			<b>Spouse:</b> 
+			<a target="_blank" href="{{selfCtrl.characterData.spouse}}">{{selfCtrl.characterData.spouse}}</a>
+		</p>
+
+
+		<!-- Titles of the Character -->
+		<div class="other" ng-if="selfCtrl.titles">
+			<b>Titles: </b>
+			<p ng-repeat="title in selfCtrl.characterData.titles">
+				{{ title }}
+			</p>
+		</div>
+
+		<!-- Aliases of the Character -->
+		<div class="other" ng-if="selfCtrl.aliases">
+			<b>Aliases: </b>
+			<p ng-repeat="alias in selfCtrl.characterData.aliases">
+				{{ alias }}
+			</p>
+		</div>
+
+		<!-- Allegiances of the character -->
+		<div class="other" ng-if="selfCtrl.allegiances">
+			<b>Allegiances: </b>
+			<p ng-repeat="allegiancy in selfCtrl.characterData.allegiances">
+				<a target="_blank" href="{{allegiancy}}">{{ allegiancy }}</a>
+			</p>
+		</div>
+
+		<!-- Books the character was present -->
+		<div class="other" ng-if="selfCtrl.books">
+			<b>Books: </b>
+			<p ng-repeat="book in selfCtrl.characterData.books">
+				<a target="_blank" href="{{book}}">{{ book }}</a>
+			</p>
+		</div>
+
+		<!-- povBooks the character was present -->
+		<div class="other" ng-if="selfCtrl.povBooks">
+			<b>Pov Books: </b>
+			<p ng-repeat="povBook in selfCtrl.characterData.povBooks">
+				<a target="_blank" href="{{povBook}}">{{ povBook }}</a>
+			</p>
+		</div>
+
+		<!-- tvSeries the character was present -->
+		<div class="other" ng-if="selfCtrl.tvSeries">
+			<b>Tv Series: </b>
+			<p ng-repeat="tvSeries in selfCtrl.characterData.tvSeries">
+				{{ tvSeries }}
+			</p>
+		</div> 
+
+		<!-- Characters Played By -->
+		<div class="other" ng-if="selfCtrl.playedBy">
+			<b>Played By: </b>
+			<p ng-repeat="person in selfCtrl.characterData.playedBy">
+				{{ person }}
+			</p>
+		</div>
+
+	</div>
+</div>
+<!-- End of Individual Character -->
+
+
+
+
+<!-- Start of Individual House -->
+<div ng-if="selfCtrl.House">
+	<div ng-init="selfCtrl.loadHouseData()">
+
+		<!-- House Name -->
+		<h1 class="font">{{selfCtrl.houseData.name}}</h1>
+
+		<!-- House Region -->
+		<div class="other" ng-if="selfCtrl.houRegion">
+			<b>Region: </b>
+			<p>{{ selfCtrl.houseData.region }}</p>
+		</div>
+
+		<!-- House CoatOfArms -->
+		<div class="other" ng-if="selfCtrl.houCoatOfArms">
+			<b>Coat Of Arms: </b>
+			<p>{{ selfCtrl.houseData.coatOfArms }}</p>
+		</div>
+
+		<!-- House Words -->
+		<div class="other" ng-if="selfCtrl.houWords">
+			<b>Words: </b>
+			<p>{{ selfCtrl.houseData.words }}</p>
+		</div>
+
+		<!-- House CurrentLord -->
+		<div class="other" ng-if="selfCtrl.houCurrentLord">
+			<b>Current Lord: </b>
+			<a target="=_blank" href="{{ selfCtrl.houseData.currentLord }}"><p>{{ selfCtrl.houseData.currentLord }}</p></a>
+		</div>
+
+		<!-- House Heir -->
+		<div class="other" ng-if="selfCtrl.houHeir">
+			<b>Heir: </b>
+			<a target="_blank" href="{{ selfCtrl.houseData.heir }}"><p>{{ selfCtrl.houseData.heir }}</p></a>
+		</div>
+
+		<!-- House Over Lord -->
+		<div class="other" ng-if="selfCtrl.houOverLord">
+			<b>Over Lord: </b>
+			<a target="_blank" href="{{ selfCtrl.houseData.overlord }}"><p>{{ selfCtrl.houseData.overlord }}</p></a>
+		</div>
+
+		<!-- House Founded -->
+		<div class="other" ng-if="selfCtrl.houFounded">
+			<b>Founded: </b>
+			<p>{{ selfCtrl.houseData.founded }}</p>
+		</div>
+
+		<!-- House Founder -->
+		<div class="other" ng-if="selfCtrl.houFounder">
+			<b>Founder: </b>
+			<a target="_blank" href="{{ selfCtrl.houseData.founder }}"><p>{{ selfCtrl.houseData.founder }}</p></a>
+		</div>
+
+		<!-- House DiedOut -->
+		<div class="other" ng-if="selfCtrl.houDiedOut">
+			<b>Died Out: </b>
+			<p>{{ selfCtrl.diedOut }}</p>
+		</div>
+
+		<!-- House Titles -->
+		<div class="other" ng-if="selfCtrl.houTitles">
+			<b>Titles: </b>
+			<p ng-repeat="title in selfCtrl.houseData.titles">
+				{{ title }}
+			</p>
+		</div>
+
+		<!-- House Seats -->
+		<div class="other" ng-if="selfCtrl.houSeats">
+			<b>Seats: </b>
+			<p ng-repeat="seat in selfCtrl.houseData.seats">
+				{{ seat }}
+			</p>
+		</div>
+
+		<!-- House Ancestral Weapons -->
+		<div class="other" ng-if="selfCtrl.houAncestralWeapons">
+			<b>Ancestral Weapons: </b>
+			<p ng-repeat="ancestralWeapon in selfCtrl.houseData.ancestralWeapons">
+				{{ ancestralWeapon }}
+			</p>
+		</div>
+
+		<!-- House Cadet Branches -->
+		<div class="other" ng-if="selfCtrl.houCadetBranches">
+			<b>Cadet Branches: </b>
+			<p ng-repeat="cadetBranch in selfCtrl.houseData.cadetBranches">
+				<a target="_blank" href="{{cadetBranch}}">{{ cadetBranch }}</a>
+			</p>
+		</div>
+
+		<!-- House Sworn Members -->
+		<div class="other" ng-if="selfCtrl.houSwornMembers">
+			<b>Sworn Members: </b>
+			<p ng-repeat="swornMember in selfCtrl.houseData.swornMembers">
+				<a target="_blank" href="{{swornMember}}">{{ swornMember }}</a>
+			</p>
+		</div>
+
+	</div>
+</div>
+<!-- End of Individual House -->
+
+<!-- a Button to go to main Page -->
+<a href="#/" class="w3-button w3-white"><i class="fa fa-home cardFont"></i> <span class="other">Go Home</span></a>
+</div>

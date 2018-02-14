@@ -1,0 +1,15 @@
+<!-- Used to display the Book data in main view -->
+<div ng-if="bookValue">
+	<a href="#/book/{{bookData.name}}">
+	<div class="w3-border w3-margin-bottom">	
+		<div class="w3-row-padding w3-container">
+			<div class="w3-col s3">
+				<h4 class="cardFont w3-right"><i class="fa fa-book"></i></h4>		
+			</div>
+			<div class="w3-col s9">
+				<h4 class="cardFont">{{bookData.name}}</h4>		
+			</div>
+		</div>
+	</div>	
+	</a>
+</div>
