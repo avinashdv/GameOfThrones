@@ -57,8 +57,8 @@ app.controller('firstController', [ '$filter', 'fact', function ($filter,fact) {
 
 					// select for alphabetical and its reverse
 					main.order = function (order) {
-        			if (order === '0') {
-            				main.data = $filter('orderBy')(main.data, 'name',false);
+        			if (order === 0) {
+            				main.data = $filter('orderBy')(main.data, 'name');
         			} else {
             				main.data = $filter('orderBy')(main.data, 'name', true);
         				}
