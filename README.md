@@ -20,8 +20,9 @@ Just download and install the Nginx server goto -> nginx -> conf -> nginx.conf ,
 
 * [Sublime](https://www.sublimetext.com/) - A Text IDE
 
-> Note
-The above web app doesn't work without using Nginx server as the server is rewritten for the html5Mode to work and also it's configured to use the custom error pages defined, only changing the roots of nginx.conf file as stated in \*Configuring Nginx Server\* and \*Example Configuring Nginx\* on the top will make the web app work without errors.
+## Note
+ 
+> The above web app doesn't work without using Nginx server as the server is rewritten for the html5Mode to work and also it's configured to use the custom error pages defined, only changing the roots of nginx.conf file as stated in \*Configuring Nginx Server\* and \*Example Configuring Nginx\* on the top will make the web app work without errors.
 
 ## Authors
 
