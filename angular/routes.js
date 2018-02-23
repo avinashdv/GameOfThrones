@@ -1,4 +1,5 @@
-app.config(['$routeProvider', function($routeProvider){
+app.config(['$routeProvider', '$locationProvider', "$httpProvider",  function($routeProvider, $locationProvider, $httpProvider){
+	
 	$routeProvider
 	.when('/', {
 		templateUrl		: 'pages/main-view.html',
@@ -20,9 +21,15 @@ app.config(['$routeProvider', function($routeProvider){
 		controller 		: 'selfController',
 		controllerAs 	: 'selfCtrl'
 	})
-	.otherwise(
-	{
-		template: '<h1>404 PAGE NOT FOUND</h1>'
-	}
-	);
+	.when('/error500', {
+		templateUrl		: '/err500.html'
+	})
+	.otherwise({
+		templateUrl 	: '/err404.html'
+	});
+
+	$httpProvider.interceptors.push('errorInterceptor');
+
+	// use the HTML5 History API
+        $locationProvider.html5Mode(true);
 }]);
